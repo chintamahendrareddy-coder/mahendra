@@ -87,8 +87,8 @@ button:hover {
 
 <form action="login.jsp" method="post">
   <h2>🏦 Admin Login</h2>
-  <input type="text" name="username" placeholder="Username" required><br>
-  <input type="password" name="password" placeholder="Password" required><br>
+  <input type="text" name="username" placeholder="Username" required>username<br>
+  <input type="password" name="password" placeholder="Password" required>passsword<br>
   <button type="submit">Login</button>
 </form>
 
