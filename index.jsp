@@ -3,6 +3,8 @@
 <html>
 <head>
 <title>Admin Login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 body {
   font-family: 'Poppins', sans-serif;
@@ -17,7 +19,7 @@ body {
   align-items: center;
 }
 
-/* Semi-transparent overlay for better readability */
+/* Overlay */
 .overlay {
   position: absolute;
   top: 0;
@@ -28,31 +30,31 @@ body {
   z-index: 0;
 }
 
-/* Centered login form */
+/* Form container */
 form {
   position: relative;
   z-index: 1;
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
-  padding: 40px;
-  width: 320px;
+  padding: 30px;
+  width: 90%;
+  max-width: 320px;
   border-radius: 15px;
   box-shadow: 0 4px 30px rgba(0,0,0,0.3);
   text-align: center;
 }
 
-/* Heading style */
+/* Heading */
 h2 {
   color: #ffffff;
-  text-align: center;
   margin-bottom: 20px;
   font-weight: 600;
   text-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
-/* Input fields */
+/* Inputs */
 input {
-  width: 85%;
+  width: 90%;
   padding: 10px;
   margin: 10px 0;
   border: none;
@@ -62,7 +64,7 @@ input {
   font-size: 14px;
 }
 
-/* Button style */
+/* Button */
 button {
   background: #00bfa5;
   color: white;
@@ -78,18 +80,17 @@ button:hover {
 }
 </style>
 </head>
+
 <body>
 
 <div class="overlay"></div>
 
-<div>
+<form action="login.jsp" method="post">
   <h2>🏦 Admin Login</h2>
-  <form action="login.jsp" method="post">
-    <input type="text" name="username" placeholder="Username" required><br>
-    <input type="password" name="password" placeholder="Password" required><br>
-    <button type="submit">Login</button>
-  </form>
-</div>
+  <input type="text" name="username" placeholder="Username" required><br>
+  <input type="password" name="password" placeholder="Password" required><br>
+  <button type="submit">Login</button>
+</form>
 
 </body>
 </html>
