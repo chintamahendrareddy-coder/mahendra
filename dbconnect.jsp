@@ -2,21 +2,15 @@
 <%
 Connection conn = null;
 try {
-    Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-
-    // Read from environment variables (set these in Railway dashboard)
-    String dbHost     = System.getenv("DB_HOST")     != null ? System.getenv("DB_HOST")     : "localhost";
-    String dbPort     = System.getenv("DB_PORT")     != null ? System.getenv("DB_PORT")     : "1433";
-    String dbName     = System.getenv("DB_NAME")     != null ? System.getenv("DB_NAME")     : "bankdb";
-    String dbUser     = System.getenv("DB_USER")     != null ? System.getenv("DB_USER")     : "sa";
-    String dbPassword = System.getenv("DB_PASSWORD") != null ? System.getenv("DB_PASSWORD") : "MyStrong@Pass123";
-
-    String url = "jdbc:sqlserver://" + dbHost + ":" + dbPort
-               + ";databaseName=" + dbName + ";encrypt=false";
-
-    conn = DriverManager.getConnection(url, dbUser, dbPassword);
+    Class.forName("org.postgresql.Driver");
+    String host     = System.getenv("PGHOST");
+    String port     = System.getenv("PGPORT");
+    String database = System.getenv("PGDATABASE");
+    String user     = System.getenv("PGUSER");
+    String password = System.getenv("PGPASSWORD");
+    String url = "jdbc:postgresql://" + host + ":" + port + "/" + database + "?sslmode=require";
+    conn = DriverManager.getConnection(url, user, password);
 } catch (Exception e) {
-    out.println("<p style='color:red;'>&#10060; Database connection failed: " + e.getMessage() + "</p>");
+    out.println("<p style='color:red;'>DB Error: " + e.getMessage() + "</p>");
 }
 %>
-
