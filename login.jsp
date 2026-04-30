@@ -35,7 +35,7 @@ a:hover {
 String user = request.getParameter("username");
 String pass = request.getParameter("password");
 
-if("admin".equals(user) && "admin123".equals(pass)) {
+if("admin".equals(user) && "admin1234".equals(pass)) {
     session.setAttribute("admin", user);
     response.sendRedirect("home.jsp");
 } else {
